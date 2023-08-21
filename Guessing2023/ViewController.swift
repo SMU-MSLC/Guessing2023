@@ -9,11 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var topLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func changePressed(_ sender: UIButton) {
+        self.topLabel.text = "Hello World, 20-23!!"
+        
+    }
 }
 
