@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func changePressed(_ sender: UIButton) {
-        self.topLabel.text = "Hello World, 20-23!!"
+        self.topLabel.text = "Hello World, 2023!!"
         
     }
 }
