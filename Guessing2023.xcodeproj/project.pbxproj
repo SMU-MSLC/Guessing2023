@@ -13,6 +13,8 @@
 		B67B0D2E2A93E6B90099F2D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67B0D2C2A93E6B90099F2D5 /* Main.storyboard */; };
 		B67B0D302A93E6BB0099F2D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67B0D2F2A93E6BB0099F2D5 /* Assets.xcassets */; };
 		B67B0D332A93E6BB0099F2D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67B0D312A93E6BB0099F2D5 /* LaunchScreen.storyboard */; };
+		B67B0D432A9D148C0099F2D5 /* GuessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B0D422A9D148C0099F2D5 /* GuessModel.m */; };
+		B67B0D452A9D1FDB0099F2D5 /* GuessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B0D442A9D1FDB0099F2D5 /* GuessingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		B67B0D2F2A93E6BB0099F2D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B67B0D322A93E6BB0099F2D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B67B0D342A93E6BB0099F2D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B67B0D402A9D148B0099F2D5 /* Guessing2023-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Guessing2023-Bridging-Header.h"; sourceTree = "<group>"; };
+		B67B0D412A9D148C0099F2D5 /* GuessModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuessModel.h; sourceTree = "<group>"; };
+		B67B0D422A9D148C0099F2D5 /* GuessModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessModel.m; sourceTree = "<group>"; };
+		B67B0D442A9D1FDB0099F2D5 /* GuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,14 @@
 				B67B0D262A93E6B90099F2D5 /* AppDelegate.swift */,
 				B67B0D282A93E6B90099F2D5 /* SceneDelegate.swift */,
 				B67B0D2A2A93E6B90099F2D5 /* ViewController.swift */,
+				B67B0D412A9D148C0099F2D5 /* GuessModel.h */,
+				B67B0D422A9D148C0099F2D5 /* GuessModel.m */,
 				B67B0D2C2A93E6B90099F2D5 /* Main.storyboard */,
+				B67B0D442A9D1FDB0099F2D5 /* GuessingViewController.swift */,
 				B67B0D2F2A93E6BB0099F2D5 /* Assets.xcassets */,
 				B67B0D312A93E6BB0099F2D5 /* LaunchScreen.storyboard */,
 				B67B0D342A93E6BB0099F2D5 /* Info.plist */,
+				B67B0D402A9D148B0099F2D5 /* Guessing2023-Bridging-Header.h */,
 			);
 			path = Guessing2023;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 				TargetAttributes = {
 					B67B0D222A93E6B90099F2D5 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -138,9 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67B0D452A9D1FDB0099F2D5 /* GuessingViewController.swift in Sources */,
 				B67B0D2B2A93E6B90099F2D5 /* ViewController.swift in Sources */,
 				B67B0D272A93E6B90099F2D5 /* AppDelegate.swift in Sources */,
 				B67B0D292A93E6B90099F2D5 /* SceneDelegate.swift in Sources */,
+				B67B0D432A9D148C0099F2D5 /* GuessModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F69WJ27LN4;
@@ -303,6 +317,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SMUMSLC.Guessing2023;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Guessing2023/Guessing2023-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F69WJ27LN4;
@@ -331,6 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SMUMSLC.Guessing2023;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Guessing2023/Guessing2023-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
