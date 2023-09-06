@@ -70,23 +70,52 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X7g-V0-R4R">
                                 <rect key="frame" x="16" y="103" width="361" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvw-E4-Gwc">
+                                <rect key="frame" x="137.66666666666666" y="145" width="118" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Make Guess"/>
+                                <connections>
+                                    <action selector="makeGuess" destination="aMr-LJ-Irr" eventType="touchUpInside" id="dC6-Dm-wJI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter as number from 1 to 100!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-Vq-65m">
+                                <rect key="frame" x="16" y="188" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PjM-62-xJH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="X7g-V0-R4R" secondAttribute="trailing" constant="16" id="1JU-og-97s"/>
+                            <constraint firstItem="uvw-E4-Gwc" firstAttribute="top" secondItem="X7g-V0-R4R" secondAttribute="bottom" constant="8" symbolic="YES" id="3OL-ad-vZd"/>
+                            <constraint firstItem="uvw-E4-Gwc" firstAttribute="centerX" secondItem="PjM-62-xJH" secondAttribute="centerX" id="O6I-IV-ujc"/>
                             <constraint firstItem="X7g-V0-R4R" firstAttribute="top" secondItem="PjM-62-xJH" secondAttribute="top" id="Upy-bP-aO4"/>
+                            <constraint firstItem="FVy-Vq-65m" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="XQr-uX-icF"/>
+                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="FVy-Vq-65m" secondAttribute="trailing" constant="16" id="ZNy-Ak-Jyj"/>
+                            <constraint firstItem="FVy-Vq-65m" firstAttribute="top" secondItem="uvw-E4-Gwc" secondAttribute="bottom" constant="8" symbolic="YES" id="jDG-hB-ro8"/>
                             <constraint firstItem="X7g-V0-R4R" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="q2O-2y-sVQ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="O2n-Mn-1E5" appends="YES" id="8Wy-wL-UVY"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="vUg-gt-lfk"/>
                     <connections>
+                        <outlet property="feedbackLabel" destination="FVy-Vq-65m" id="dzY-xb-pCT"/>
                         <outlet property="guessNumberTextField" destination="X7g-V0-R4R" id="nJJ-BQ-eN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9D-Sa-YrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="O2n-Mn-1E5">
+                    <connections>
+                        <action selector="tapDidCancel:" destination="aMr-LJ-Irr" id="NVi-Pz-z5i"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2118.320610687023" y="5.6338028169014089"/>
         </scene>
