@@ -80,10 +80,19 @@
                                     <action selector="makeGuess" destination="aMr-LJ-Irr" eventType="touchUpInside" id="dC6-Dm-wJI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter as number from 1 to 100!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-Vq-65m">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make a Guess!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-Vq-65m">
                                 <rect key="frame" x="16" y="188" width="361" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a number from 1 to 100!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0te-mz-Fzp">
+                                <rect key="frame" x="16" y="217" width="361" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="xfT-Ii-u9j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -93,12 +102,15 @@
                         <constraints>
                             <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="X7g-V0-R4R" secondAttribute="trailing" constant="16" id="1JU-og-97s"/>
                             <constraint firstItem="uvw-E4-Gwc" firstAttribute="top" secondItem="X7g-V0-R4R" secondAttribute="bottom" constant="8" symbolic="YES" id="3OL-ad-vZd"/>
+                            <constraint firstItem="0te-mz-Fzp" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="5zn-81-24A"/>
+                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="0te-mz-Fzp" secondAttribute="trailing" constant="16" id="CfT-sV-WT9"/>
                             <constraint firstItem="uvw-E4-Gwc" firstAttribute="centerX" secondItem="PjM-62-xJH" secondAttribute="centerX" id="O6I-IV-ujc"/>
                             <constraint firstItem="X7g-V0-R4R" firstAttribute="top" secondItem="PjM-62-xJH" secondAttribute="top" id="Upy-bP-aO4"/>
                             <constraint firstItem="FVy-Vq-65m" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="XQr-uX-icF"/>
                             <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="FVy-Vq-65m" secondAttribute="trailing" constant="16" id="ZNy-Ak-Jyj"/>
                             <constraint firstItem="FVy-Vq-65m" firstAttribute="top" secondItem="uvw-E4-Gwc" secondAttribute="bottom" constant="8" symbolic="YES" id="jDG-hB-ro8"/>
                             <constraint firstItem="X7g-V0-R4R" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="q2O-2y-sVQ"/>
+                            <constraint firstItem="0te-mz-Fzp" firstAttribute="top" secondItem="FVy-Vq-65m" secondAttribute="bottom" constant="8" symbolic="YES" id="s48-hX-cja"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="O2n-Mn-1E5" appends="YES" id="8Wy-wL-UVY"/>
@@ -108,6 +120,7 @@
                     <connections>
                         <outlet property="feedbackLabel" destination="FVy-Vq-65m" id="dzY-xb-pCT"/>
                         <outlet property="guessNumberTextField" destination="X7g-V0-R4R" id="nJJ-BQ-eN9"/>
+                        <outlet property="largeFeedbackLabel" destination="0te-mz-Fzp" id="goj-yQ-lgJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9D-Sa-YrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -139,6 +152,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

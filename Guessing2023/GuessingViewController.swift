@@ -14,6 +14,8 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var guessNumberTextField: UITextField!
     
+    @IBOutlet weak var largeFeedbackLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +34,10 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func makeGuess(){
         var textToDisplay = ""
+        var largeTextToDisplay = ""
+        
+        var anim = UIView.AnimationOptions.transitionCrossDissolve
+        var duration = 0.33
         
         if let userGuess = self.guessNumberTextField.text,
             let userGuessInt = Int(userGuess),
@@ -44,6 +50,8 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
             case GuessValueCorrect:
                 textToDisplay = "Correct!"
                 self.guessNumberTextField.resignFirstResponder()
+                anim = .transitionFlipFromRight
+                duration = 3.0
             case GuessValueLower:
                 textToDisplay = "Lower!"
             case GuessValueHigher:
@@ -52,12 +60,32 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
                 textToDisplay = "never will get here"
             }
             
+            largeTextToDisplay = "\(guessModel.lowerBound()) < X < \(guessModel.upperBound())"
+            
         }else{
-            textToDisplay = "please enter a number between \(guessModel.lowerBound()) and \(guessModel.upperBound())"
+            largeTextToDisplay = "please enter a number between \(guessModel.lowerBound()) and \(guessModel.upperBound())"
         }
         
         self.guessNumberTextField.text = ""
-        self.feedbackLabel.text = textToDisplay
+        
+        // update the user feedback
+        UIView.transition(with: self.feedbackLabel,
+              duration: duration,
+              options: anim,
+              animations: {
+            self.feedbackLabel.text = textToDisplay
+                          },
+              completion: nil)
+        
+        // update the user feedback
+        UIView.transition(with: self.largeFeedbackLabel,
+              duration: duration,
+              options: anim,
+              animations: {
+            self.largeFeedbackLabel.text = largeTextToDisplay
+                          },
+              completion: nil)
+        
     }
     
     @IBAction func tapDidCancel(_ sender: UITapGestureRecognizer) {
