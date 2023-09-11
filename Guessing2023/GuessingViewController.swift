@@ -73,7 +73,7 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
               duration: duration,
               options: anim,
               animations: {
-            self.feedbackLabel.text = textToDisplay
+                            self.feedbackLabel.text = textToDisplay
                           },
               completion: nil)
         
@@ -82,7 +82,7 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
               duration: duration,
               options: anim,
               animations: {
-            self.largeFeedbackLabel.text = largeTextToDisplay
+                            self.largeFeedbackLabel.text = largeTextToDisplay
                           },
               completion: nil)
         

@@ -72,46 +72,171 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvw-E4-Gwc">
-                                <rect key="frame" x="137.66666666666666" y="145" width="118" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Make Guess"/>
-                                <connections>
-                                    <action selector="makeGuess" destination="aMr-LJ-Irr" eventType="touchUpInside" id="dC6-Dm-wJI"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make a Guess!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-Vq-65m">
-                                <rect key="frame" x="16" y="188" width="361" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a number from 1 to 100!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0te-mz-Fzp">
-                                <rect key="frame" x="16" y="217" width="361" height="69"/>
+                                <rect key="frame" x="16" y="184.66666666666666" width="361" height="81.999999999999972"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="xfT-Ii-u9j"/>
+                                    <constraint firstAttribute="height" constant="82" id="6VR-P9-9il"/>
+                                    <constraint firstAttribute="height" constant="82" id="pMD-jy-u8S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6VR-P9-9il"/>
+                                        <exclude reference="pMD-jy-u8S"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="pMD-jy-u8S"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="6VR-P9-9il"/>
+                                    </mask>
+                                </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make a Guess!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-Vq-65m">
+                                <rect key="frame" x="16" y="145" width="361" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="6bl-g9-vUt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6bl-g9-vUt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6bl-g9-vUt"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvw-E4-Gwc">
+                                <rect key="frame" x="16" y="274.66666666666669" width="361" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4yO-NR-dUS"/>
+                                    <constraint firstAttribute="height" constant="82" id="MmJ-g3-a30"/>
+                                    <constraint firstAttribute="width" constant="325" id="VSZ-eS-Sli"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Make Guess">
+                                    <backgroundConfiguration key="background" cornerRadius="5">
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4yO-NR-dUS"/>
+                                        <exclude reference="MmJ-g3-a30"/>
+                                        <exclude reference="VSZ-eS-Sli"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="MmJ-g3-a30"/>
+                                        <include reference="VSZ-eS-Sli"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="4yO-NR-dUS"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="makeGuess" destination="aMr-LJ-Irr" eventType="touchUpInside" id="dC6-Dm-wJI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PjM-62-xJH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="X7g-V0-R4R" secondAttribute="trailing" constant="16" id="1JU-og-97s"/>
-                            <constraint firstItem="uvw-E4-Gwc" firstAttribute="top" secondItem="X7g-V0-R4R" secondAttribute="bottom" constant="8" symbolic="YES" id="3OL-ad-vZd"/>
-                            <constraint firstItem="0te-mz-Fzp" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="5zn-81-24A"/>
-                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="0te-mz-Fzp" secondAttribute="trailing" constant="16" id="CfT-sV-WT9"/>
-                            <constraint firstItem="uvw-E4-Gwc" firstAttribute="centerX" secondItem="PjM-62-xJH" secondAttribute="centerX" id="O6I-IV-ujc"/>
-                            <constraint firstItem="X7g-V0-R4R" firstAttribute="top" secondItem="PjM-62-xJH" secondAttribute="top" id="Upy-bP-aO4"/>
-                            <constraint firstItem="FVy-Vq-65m" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="XQr-uX-icF"/>
-                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="FVy-Vq-65m" secondAttribute="trailing" constant="16" id="ZNy-Ak-Jyj"/>
-                            <constraint firstItem="FVy-Vq-65m" firstAttribute="top" secondItem="uvw-E4-Gwc" secondAttribute="bottom" constant="8" symbolic="YES" id="jDG-hB-ro8"/>
-                            <constraint firstItem="X7g-V0-R4R" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="q2O-2y-sVQ"/>
-                            <constraint firstItem="0te-mz-Fzp" firstAttribute="top" secondItem="FVy-Vq-65m" secondAttribute="bottom" constant="8" symbolic="YES" id="s48-hX-cja"/>
+                            <constraint firstItem="uvw-E4-Gwc" firstAttribute="leading" secondItem="0te-mz-Fzp" secondAttribute="trailing" constant="8" symbolic="YES" id="0RB-Iz-NnV"/>
+                            <constraint firstItem="0te-mz-Fzp" firstAttribute="top" secondItem="X7g-V0-R4R" secondAttribute="bottom" constant="8" symbolic="YES" id="56a-th-1Nq"/>
+                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="X7g-V0-R4R" secondAttribute="trailing" constant="16" id="65m-wA-KKp"/>
+                            <constraint firstItem="0te-mz-Fzp" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="6L5-BJ-SXu"/>
+                            <constraint firstItem="0te-mz-Fzp" firstAttribute="top" secondItem="FVy-Vq-65m" secondAttribute="bottom" constant="19.666666666666657" id="9s3-wD-iLo"/>
+                            <constraint firstItem="FVy-Vq-65m" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="Cs8-Gb-JNO"/>
+                            <constraint firstItem="X7g-V0-R4R" firstAttribute="top" secondItem="PjM-62-xJH" secondAttribute="top" id="Fty-ky-wwS"/>
+                            <constraint firstItem="X7g-V0-R4R" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="KDy-Mq-Tpk"/>
+                            <constraint firstItem="FVy-Vq-65m" firstAttribute="top" secondItem="PjM-62-xJH" secondAttribute="top" constant="7" id="RyV-dw-GuN"/>
+                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="0te-mz-Fzp" secondAttribute="trailing" constant="16" id="ZGm-Cv-LGF"/>
+                            <constraint firstItem="0te-mz-Fzp" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="20" id="bTc-DR-EP0"/>
+                            <constraint firstItem="X7g-V0-R4R" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="20" id="gZ6-60-V0q"/>
+                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="uvw-E4-Gwc" secondAttribute="trailing" constant="16" id="isx-9f-cJP"/>
+                            <constraint firstItem="X7g-V0-R4R" firstAttribute="top" secondItem="PjM-62-xJH" secondAttribute="top" id="kSs-7Z-7V7"/>
+                            <constraint firstItem="uvw-E4-Gwc" firstAttribute="top" secondItem="0te-mz-Fzp" secondAttribute="bottom" constant="8" symbolic="YES" id="lPt-LI-WDh"/>
+                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="FVy-Vq-65m" secondAttribute="trailing" constant="16" id="n66-61-Jtd"/>
+                            <constraint firstItem="uvw-E4-Gwc" firstAttribute="leading" secondItem="PjM-62-xJH" secondAttribute="leading" constant="16" id="nNx-ZT-JYa"/>
+                            <constraint firstItem="uvw-E4-Gwc" firstAttribute="top" secondItem="FVy-Vq-65m" secondAttribute="bottom" constant="15" id="oiw-Uq-rDh"/>
+                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="uvw-E4-Gwc" secondAttribute="trailing" constant="20" id="r9C-cr-CWD"/>
+                            <constraint firstItem="PjM-62-xJH" firstAttribute="trailing" secondItem="FVy-Vq-65m" secondAttribute="trailing" constant="20" id="rxr-T4-pas"/>
+                            <constraint firstItem="FVy-Vq-65m" firstAttribute="leading" secondItem="X7g-V0-R4R" secondAttribute="trailing" constant="8" symbolic="YES" id="xAn-La-Y4J"/>
+                            <constraint firstItem="FVy-Vq-65m" firstAttribute="top" secondItem="X7g-V0-R4R" secondAttribute="bottom" constant="8" symbolic="YES" id="zPg-ki-KLV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="65m-wA-KKp"/>
+                                <exclude reference="ZGm-Cv-LGF"/>
+                                <exclude reference="isx-9f-cJP"/>
+                                <exclude reference="n66-61-Jtd"/>
+                                <exclude reference="r9C-cr-CWD"/>
+                                <exclude reference="rxr-T4-pas"/>
+                                <exclude reference="Fty-ky-wwS"/>
+                                <exclude reference="KDy-Mq-Tpk"/>
+                                <exclude reference="gZ6-60-V0q"/>
+                                <exclude reference="kSs-7Z-7V7"/>
+                                <exclude reference="56a-th-1Nq"/>
+                                <exclude reference="6L5-BJ-SXu"/>
+                                <exclude reference="9s3-wD-iLo"/>
+                                <exclude reference="bTc-DR-EP0"/>
+                                <exclude reference="Cs8-Gb-JNO"/>
+                                <exclude reference="RyV-dw-GuN"/>
+                                <exclude reference="xAn-La-Y4J"/>
+                                <exclude reference="zPg-ki-KLV"/>
+                                <exclude reference="0RB-Iz-NnV"/>
+                                <exclude reference="lPt-LI-WDh"/>
+                                <exclude reference="nNx-ZT-JYa"/>
+                                <exclude reference="oiw-Uq-rDh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="r9C-cr-CWD"/>
+                                <include reference="rxr-T4-pas"/>
+                                <include reference="gZ6-60-V0q"/>
+                                <include reference="kSs-7Z-7V7"/>
+                                <include reference="56a-th-1Nq"/>
+                                <include reference="bTc-DR-EP0"/>
+                                <include reference="RyV-dw-GuN"/>
+                                <include reference="xAn-La-Y4J"/>
+                                <include reference="0RB-Iz-NnV"/>
+                                <include reference="oiw-Uq-rDh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="65m-wA-KKp"/>
+                                <include reference="ZGm-Cv-LGF"/>
+                                <include reference="isx-9f-cJP"/>
+                                <include reference="n66-61-Jtd"/>
+                                <include reference="Fty-ky-wwS"/>
+                                <include reference="KDy-Mq-Tpk"/>
+                                <include reference="6L5-BJ-SXu"/>
+                                <include reference="9s3-wD-iLo"/>
+                                <include reference="Cs8-Gb-JNO"/>
+                                <include reference="zPg-ki-KLV"/>
+                                <include reference="lPt-LI-WDh"/>
+                                <include reference="nNx-ZT-JYa"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="O2n-Mn-1E5" appends="YES" id="8Wy-wL-UVY"/>
                         </connections>
@@ -130,7 +255,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2118.320610687023" y="5.6338028169014089"/>
+            <point key="canvasLocation" x="2116.1971830985917" y="3.8167938931297707"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UVD-tp-4GC">
@@ -152,8 +277,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
