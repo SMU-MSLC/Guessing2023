@@ -63,7 +63,7 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
             largeTextToDisplay = "\(guessModel.lowerBound()) < X < \(guessModel.upperBound())"
             
         }else{
-            largeTextToDisplay = "please enter a number between \(guessModel.lowerBound()) and \(guessModel.upperBound())"
+            largeTextToDisplay = "Please enter a number between \(guessModel.lowerBound()) and \(guessModel.upperBound())"
         }
         
         self.guessNumberTextField.text = ""
