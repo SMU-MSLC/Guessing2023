@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GuessingViewController: UIViewController, UITextFieldDelegate {
+class GuessingViewController: UIViewController {
     @IBOutlet weak var feedbackLabel: UILabel!
     
     var guessModel = GuessModel()
@@ -16,21 +16,18 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var largeFeedbackLabel: UILabel!
     
+    @IBOutlet weak var makeGuessButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // setup the UITextfield to be active, with keyboard on screen!
         
         guessNumberTextField.delegate = self
         guessNumberTextField.becomeFirstResponder()
     }
     
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        
-        return true
-    }
+    
     
     @IBAction func makeGuess(){
         var textToDisplay = ""
@@ -39,6 +36,7 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
         var anim = UIView.AnimationOptions.transitionCrossDissolve
         var duration = 0.33
         
+        // large if let statement to check on consistency
         if let userGuess = self.guessNumberTextField.text,
             let userGuessInt = Int(userGuess),
             userGuessInt <= guessModel.upperBound(),
@@ -52,6 +50,8 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
                 self.guessNumberTextField.resignFirstResponder()
                 anim = .transitionFlipFromRight
                 duration = 3.0
+                self.makeGuessButton.isEnabled = false
+                
             case GuessValueLower:
                 textToDisplay = "Lower!"
             case GuessValueHigher:
@@ -66,9 +66,11 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
             largeTextToDisplay = "Please enter a number between \(guessModel.lowerBound()) and \(guessModel.upperBound())"
         }
         
+        // clear the text field
         self.guessNumberTextField.text = ""
         
-        // update the user feedback
+        // update the user feedback label
+        // use closure for animation ending
         UIView.transition(with: self.feedbackLabel,
               duration: duration,
               options: anim,
@@ -77,7 +79,7 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
                           },
               completion: nil)
         
-        // update the user feedback
+        // update the user feedback large label
         UIView.transition(with: self.largeFeedbackLabel,
               duration: duration,
               options: anim,
@@ -93,4 +95,12 @@ class GuessingViewController: UIViewController, UITextFieldDelegate {
     }
     
 
+}
+
+// placing Delegate functions here for clarity
+extension GuessingViewController: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 }

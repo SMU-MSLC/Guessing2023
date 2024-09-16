@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xe4-Tv-6Kf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xe4-Tv-6Kf">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -133,15 +134,15 @@
                                 </buttonConfiguration>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="VSZ-eS-Sli"/>
                                         <exclude reference="4yO-NR-dUS"/>
                                         <exclude reference="MmJ-g3-a30"/>
-                                        <exclude reference="VSZ-eS-Sli"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
-                                        <include reference="MmJ-g3-a30"/>
                                         <include reference="VSZ-eS-Sli"/>
+                                        <include reference="MmJ-g3-a30"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
@@ -189,22 +190,22 @@
                                 <exclude reference="n66-61-Jtd"/>
                                 <exclude reference="r9C-cr-CWD"/>
                                 <exclude reference="rxr-T4-pas"/>
-                                <exclude reference="Fty-ky-wwS"/>
                                 <exclude reference="KDy-Mq-Tpk"/>
                                 <exclude reference="gZ6-60-V0q"/>
+                                <exclude reference="Fty-ky-wwS"/>
                                 <exclude reference="kSs-7Z-7V7"/>
-                                <exclude reference="56a-th-1Nq"/>
-                                <exclude reference="6L5-BJ-SXu"/>
-                                <exclude reference="9s3-wD-iLo"/>
-                                <exclude reference="bTc-DR-EP0"/>
-                                <exclude reference="Cs8-Gb-JNO"/>
-                                <exclude reference="RyV-dw-GuN"/>
                                 <exclude reference="xAn-La-Y4J"/>
+                                <exclude reference="Cs8-Gb-JNO"/>
                                 <exclude reference="zPg-ki-KLV"/>
+                                <exclude reference="RyV-dw-GuN"/>
+                                <exclude reference="6L5-BJ-SXu"/>
+                                <exclude reference="bTc-DR-EP0"/>
+                                <exclude reference="56a-th-1Nq"/>
+                                <exclude reference="9s3-wD-iLo"/>
                                 <exclude reference="0RB-Iz-NnV"/>
-                                <exclude reference="lPt-LI-WDh"/>
                                 <exclude reference="nNx-ZT-JYa"/>
                                 <exclude reference="oiw-Uq-rDh"/>
+                                <exclude reference="lPt-LI-WDh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -213,10 +214,10 @@
                                 <include reference="rxr-T4-pas"/>
                                 <include reference="gZ6-60-V0q"/>
                                 <include reference="kSs-7Z-7V7"/>
-                                <include reference="56a-th-1Nq"/>
-                                <include reference="bTc-DR-EP0"/>
-                                <include reference="RyV-dw-GuN"/>
                                 <include reference="xAn-La-Y4J"/>
+                                <include reference="RyV-dw-GuN"/>
+                                <include reference="bTc-DR-EP0"/>
+                                <include reference="56a-th-1Nq"/>
                                 <include reference="0RB-Iz-NnV"/>
                                 <include reference="oiw-Uq-rDh"/>
                             </mask>
@@ -227,14 +228,14 @@
                                 <include reference="ZGm-Cv-LGF"/>
                                 <include reference="isx-9f-cJP"/>
                                 <include reference="n66-61-Jtd"/>
-                                <include reference="Fty-ky-wwS"/>
                                 <include reference="KDy-Mq-Tpk"/>
-                                <include reference="6L5-BJ-SXu"/>
-                                <include reference="9s3-wD-iLo"/>
+                                <include reference="Fty-ky-wwS"/>
                                 <include reference="Cs8-Gb-JNO"/>
                                 <include reference="zPg-ki-KLV"/>
-                                <include reference="lPt-LI-WDh"/>
+                                <include reference="6L5-BJ-SXu"/>
+                                <include reference="9s3-wD-iLo"/>
                                 <include reference="nNx-ZT-JYa"/>
+                                <include reference="lPt-LI-WDh"/>
                             </mask>
                         </variation>
                         <connections>
@@ -246,6 +247,7 @@
                         <outlet property="feedbackLabel" destination="FVy-Vq-65m" id="dzY-xb-pCT"/>
                         <outlet property="guessNumberTextField" destination="X7g-V0-R4R" id="nJJ-BQ-eN9"/>
                         <outlet property="largeFeedbackLabel" destination="0te-mz-Fzp" id="goj-yQ-lgJ"/>
+                        <outlet property="makeGuessButton" destination="uvw-E4-Gwc" id="oDz-0Q-hQ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9D-Sa-YrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,13 +280,13 @@
     </scenes>
     <resources>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
