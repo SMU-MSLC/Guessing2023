@@ -27,6 +27,7 @@ class GuessingViewController: UIViewController {
         
         guessNumberTextField.delegate = self
         guessNumberTextField.becomeFirstResponder()
+        
     }
     
 
@@ -35,13 +36,19 @@ class GuessingViewController: UIViewController {
     /// Make a guess from the user this comes directly from Text field, so we need to
     ///   check if text is entered correctly. Once a guess is made, update the UI with feedback
     @IBAction func makeGuess(){
+        
+        // setup some defaults for text and animation
+        // these variables will be updated based on the guess
         var textToDisplay = ""
         var largeTextToDisplay = ""
         
         var anim = UIView.AnimationOptions.transitionCrossDissolve
         var duration = 0.33
         
-        // large if let statement to check on consistency
+        // large "if let" statement to check on consistency
+        // 1. Can we get the text,
+        // 2. Can the text be made an integer
+        // 3/4. Is the integer in range?
         if let userGuess = self.guessNumberTextField.text,
             let userGuessInt = Int(userGuess),
             userGuessInt <= guessModel.upperBound(),
@@ -50,25 +57,36 @@ class GuessingViewController: UIViewController {
             
             
             switch guessModel.makeGuess(userGuessInt){
-            case GuessValueCorrect:
-                textToDisplay = "Correct!"
-                self.guessNumberTextField.resignFirstResponder()
-                anim = .transitionFlipFromRight
-                duration = 3.0
-                self.makeGuessButton.isEnabled = false
+                case GuessValueCorrect:
+                    // everything is good, update the UI
+                    textToDisplay = "Correct!"
+                    self.guessNumberTextField.resignFirstResponder() //dismiss keyboard
                 
-            case GuessValueLower:
-                textToDisplay = "Lower!"
-            case GuessValueHigher:
-                textToDisplay = "Higher!"
-            default:
-                textToDisplay = "never will get here"
+                    // give longer, more visual animation
+                    anim = .transitionFlipFromRight
+                    duration = 3.0
+                
+                    // disable button, no new guesses
+                    self.makeGuessButton.isEnabled = false
+                    
+                case GuessValueLower:
+                    textToDisplay = "Lower!"
+                case GuessValueHigher:
+                    textToDisplay = "Higher!"
+                default:
+                    textToDisplay = "never will get here"
             }
             
+            // update the text for guess range
             largeTextToDisplay = "\(guessModel.lowerBound()) < X < \(guessModel.upperBound())"
             
         }else{
+            // something was malformed from Text field
+            //  of the guess was out of range
+            //  give some generic feedback to user
             largeTextToDisplay = "Please enter a number between \(guessModel.lowerBound()) and \(guessModel.upperBound())"
+            
+            // TODO: special case after they guessed the correct number?
         }
         
         // clear the text field
@@ -96,14 +114,15 @@ class GuessingViewController: UIViewController {
     }
     
     @IBAction func tapDidCancel(_ sender: UITapGestureRecognizer) {
-        self.guessNumberTextField.resignFirstResponder()
+        // user tapped off of text field
+        self.guessNumberTextField.resignFirstResponder() //dismiss keyboard
     }
     
 
 }
 
 // MARK: Extension for UITextFieldDelegate
-// placing Delegate functions here for clarity, very common practice 
+// placing Delegate functions here for clarity, very common practice
 extension GuessingViewController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
