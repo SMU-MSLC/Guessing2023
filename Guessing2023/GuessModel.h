@@ -18,7 +18,11 @@ typedef enum : NSUInteger {
 @interface GuessModel : NSObject
 
 // public interface methods 
+
+// make a guess (integer) to the model, return GuessValue enum
 -(GuessValue) makeGuess:(NSInteger) guess;
+
+// get computed lower and upper bounds for model
 -(NSInteger) lowerBound;
 -(NSInteger) upperBound;
 

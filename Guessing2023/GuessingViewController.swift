@@ -8,15 +8,18 @@
 import UIKit
 
 class GuessingViewController: UIViewController {
-    @IBOutlet weak var feedbackLabel: UILabel!
     
+    // MARK: Model for guessing
     var guessModel = GuessModel()
     
+    // MARK: UI Outlets
     @IBOutlet weak var guessNumberTextField: UITextField!
-    
     @IBOutlet weak var largeFeedbackLabel: UILabel!
-    
+    @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var makeGuessButton: UIButton!
+    
+    
+    // MARK: View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +31,9 @@ class GuessingViewController: UIViewController {
     
 
     
-    
+    // MARK: UI Actions
+    /// Make a guess from the user this comes directly from Text field, so we need to
+    ///   check if text is entered correctly. Once a guess is made, update the UI with feedback
     @IBAction func makeGuess(){
         var textToDisplay = ""
         var largeTextToDisplay = ""
@@ -97,7 +102,8 @@ class GuessingViewController: UIViewController {
 
 }
 
-// placing Delegate functions here for clarity
+// MARK: Extension for UITextFieldDelegate
+// placing Delegate functions here for clarity, very common practice 
 extension GuessingViewController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
